@@ -1,0 +1,9 @@
+#EXTM3U.html
+#EXTINF:0,TeknoRadio 1
+http://relay01.teknoradio.org:8000/32kbps.mp3
+#EXTINF:0,TeknoRadio 2
+http://relay01.teknoradio.org:9000/32kbps.mp3
+#EXTINF:0,TeknoRadio 3
+http://player01.teknoradio.org:8000/32kbps.mp3
+#EXTINF:0,TeknoRadio 4
+http://player01.teknoradio.org:9000/32kbps.mp3
