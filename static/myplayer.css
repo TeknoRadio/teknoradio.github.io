@@ -1,3 +1,3 @@
-@import url('mediaelementplayer.css');
-@import url('mep-feature-playlist.css');
-@import url('local.css');
+@import url('/static/mediaelementplayer.css');
+@import url('/static/mep-feature-playlist.css');
+@import url('/static/local.css');
