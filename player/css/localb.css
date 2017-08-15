@@ -2,9 +2,9 @@ html {
    overflow: hidden;
    height: 100%
 }
-body { 
+body {
    background: black;
-   background-image: url(https://teknoradio.org/player/TRlogo-tr.png);
+   background-image: url(/player/TRlogo-tr.png);
 background-repeat: no-repeat;
 background-position: center;
 background-attachment: fixed;
@@ -15,7 +15,7 @@ background-attachment: fixed;
    top: 0!important;
    padding: 3px 0 0 0;
    height: 2em!important;
-   background: none!important; 
+   background: none!important;
    border-top: 2em!important;
 }
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
