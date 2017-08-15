@@ -7,16 +7,26 @@
    <script type="text/javascript" src="js/jquery.js"></script>
    <script type="text/javascript" src="js/myplayer.min.js"></script>
    <link rel="stylesheet" href="css/myplayerb.css" />
-   <script type="text/javascript">$(function(){MyPlayer({
+   <script type="text/javascript">
+   function test(a) {
+var m3u = a.selectedIndex;
+
+   $(function(){MyPlayer({
       mode:      'm3u',
-      m3u:       'Playlist.m3u',
 	  network: true,
 	  detachable: false,
       filematch: /./
-   })});</script>
+   })});
+   </script>
 </head>
 <body>
-      <font color="#0C85C2"><p>Now Playing: <span data-shoutcast-value="songtitle"></span></p></font>  
+      <font color="#0C85C2"><p>Now Playing: <span data-shoutcast-value="songtitle"></span></p></font> 
+<select name="playlist" id="playlist">
+<option value="Listen@128.m3u" selected="selected">Listen@128.m3u</option>
+<option value="Listen@64.m3u">Listen@64.m3u</option>
+<option value="Listen@32.m3u">Listen@32.m3u</option>
+</select>
+	  
  <script src="js/jquery.shoutcast.easy.min.js?host=149.210.247.39&port=8000"></script>
 </body>
 </html>

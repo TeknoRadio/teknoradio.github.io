@@ -1,0 +1,13 @@
+#EXTM3U
+http://relay01.teknoradio.org:8000/128kbps.mp3
+http://relay01.teknoradio.org:9000/128kbps.mp3
+http://player01.teknoradio.org:8000/128kbps.mp3
+http://player01.teknoradio.org:9000/128kbps.mp3
+http://relay01.teknoradio.org:8000/64kbps.mp3
+http://relay01.teknoradio.org:9000/64kbps.mp3
+http://player01.teknoradio.org:8000/64kbps.mp3
+http://player01.teknoradio.org:9000/64kbps.mp3
+http://relay01.teknoradio.org:8000/32kbps.mp3
+http://relay01.teknoradio.org:9000/32kbps.mp3
+http://player01.teknoradio.org:8000/32kbps.mp3
+http://player01.teknoradio.org:9000/32kbps.mp3
