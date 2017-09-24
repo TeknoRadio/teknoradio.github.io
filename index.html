@@ -97,9 +97,9 @@ body.custom-background { background-image: url("/images/IMG_6227.jpg"); backgrou
 function radioTitle() {
 
     // this is the URL of the json.xml file located on your server.
-    var url = 'http://player01.teknoradio.org:9000/info.xsl';
+    var url = 'http://player01.teknoradio.org:info/json.xsl';
     // this is your mountpoint's name, mine is called /radio
-    var mountpoint = '/mounts';
+    var mountpoint = '/128kbps.mp3';
 
     $.ajax({  type: 'GET',
           url: url,
@@ -109,7 +109,7 @@ function radioTitle() {
           dataType: 'jsonp',
           success: function (json) {
             // this is the element we're updating that will hold the track title
-            $('#title').text(json[mountpoint].title);
+            $('#track-title').text(json[mountpoint].title);
             // this is the element we're updating that will hold the listeners count
             $('#listeners').text(json[mountpoint].listeners);
         },
@@ -117,7 +117,6 @@ function radioTitle() {
         }
     });
 
-}
 </script>
 </head>
 
@@ -194,8 +193,7 @@ function radioTitle() {
 	</div>
 	<div class="widget-area-inner">
 		<aside id="black-studio-tinymce-4" class="W01 widget widget_black_studio_tinymce"><div class="textwidget"><p style="text-align: center;">Now playing:<br />
-		Listeners: <span id="listeners">00</span>
-		Current track: <span id="title"></span>
+	<span id="track-title"></span>
 </div></aside><aside id="black-studio-tinymce-5" class="widget widget_black_studio_tinymce"><div class="textwidget"><p><center><a href="https://www.facebook.com/TeknoRadio" target="blank" title="TeknoRadio at Facebook"><i class="fa fa-facebook fa-2x"></i></a></center></p>
 </div></aside><aside id="black-studio-tinymce-6" class="widget widget_black_studio_tinymce"><div class="textwidget"><hr />
 <p style="text-align: center;">Track history<br />
