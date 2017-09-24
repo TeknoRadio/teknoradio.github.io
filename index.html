@@ -99,7 +99,7 @@ function radioTitle() {
     // this is the URL of the json.xml file located on your server.
     var url = 'http://player01.teknoradio.org:9000/json.xsl';
     // this is your mountpoint's name, mine is called /radio
-    var mountpoint = '/128kbps.mp3';
+    var mountpoint = '/mounts';
 
     $.ajax({  type: 'GET',
           url: url,
@@ -195,7 +195,7 @@ function radioTitle() {
 	<div class="widget-area-inner">
 		<aside id="black-studio-tinymce-4" class="W01 widget widget_black_studio_tinymce"><div class="textwidget"><p style="text-align: center;">Now playing:<br />
 		Listeners: <span id="listeners">00</span>
-		Current track: <span id="title">LIVE</span>
+		Current track: <span id="title"></span>
 </div></aside><aside id="black-studio-tinymce-5" class="widget widget_black_studio_tinymce"><div class="textwidget"><p><center><a href="https://www.facebook.com/TeknoRadio" target="blank" title="TeknoRadio at Facebook"><i class="fa fa-facebook fa-2x"></i></a></center></p>
 </div></aside><aside id="black-studio-tinymce-6" class="widget widget_black_studio_tinymce"><div class="textwidget"><hr />
 <p style="text-align: center;">Track history<br />
