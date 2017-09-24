@@ -92,9 +92,14 @@ body.custom-background { background-image: url("/images/IMG_6227.jpg"); backgrou
 <link rel="icon" href="/images/TRlogo.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="/images/TRlogo.png" />
 <meta name="msapplication-TileImage" content="/images/TRlogo.png" />
+
+<script>
+$(function(){$('.mounts').icecast({server:"player01.teknoradio.org"});});
+</script>
 </head>
 
 <body class="home page-template-default page page-id-7 custom-background siteorigin-panels siteorigin-panels-before-js siteorigin-panels-home">
+<ul class="mounts"></ul>
 <div class="body-overlay"></div>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
