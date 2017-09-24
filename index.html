@@ -93,10 +93,31 @@ body.custom-background { background-image: url("/images/IMG_6227.jpg"); backgrou
 <link rel="apple-touch-icon-precomposed" href="/images/TRlogo.png" />
 <meta name="msapplication-TileImage" content="/images/TRlogo.png" />
 
-<script src='http://code.jquery.com/jquery-1.7.1.js'></script>
-<script src='jquery-icecast.js'></script>
 <script>
-$(function(){$('.mounts').icecast({server:"player01.teknoradio.org:9000"});});
+function radioTitle() {
+
+    // this is the URL of the json.xml file located on your server.
+    var url = 'http://player01.teknoradio.org:9000/json.xsl';
+    // this is your mountpoint's name, mine is called /radio
+    var mountpoint = '/128kbps.mp3';
+
+    $.ajax({  type: 'GET',
+          url: url,
+          async: true,
+          jsonpCallback: 'parseMusic',
+          contentType: "application/json",
+          dataType: 'jsonp',
+          success: function (json) {
+            // this is the element we're updating that will hold the track title
+            $('#title').text(json[mountpoint].title);
+            // this is the element we're updating that will hold the listeners count
+            $('#listeners').text(json[mountpoint].listeners);
+        },
+          error: function (e) {    console.log(e.message);
+        }
+    });
+
+}
 </script>
 </head>
 
@@ -173,7 +194,8 @@ $(function(){$('.mounts').icecast({server:"player01.teknoradio.org:9000"});});
 	</div>
 	<div class="widget-area-inner">
 		<aside id="black-studio-tinymce-4" class="W01 widget widget_black_studio_tinymce"><div class="textwidget"><p style="text-align: center;">Now playing:<br />
-<span id="title">bla</span>
+		Listeners: <span id="listeners">00</span>
+		Current track: <span id="title">LIVE</span>
 </div></aside><aside id="black-studio-tinymce-5" class="widget widget_black_studio_tinymce"><div class="textwidget"><p><center><a href="https://www.facebook.com/TeknoRadio" target="blank" title="TeknoRadio at Facebook"><i class="fa fa-facebook fa-2x"></i></a></center></p>
 </div></aside><aside id="black-studio-tinymce-6" class="widget widget_black_studio_tinymce"><div class="textwidget"><hr />
 <p style="text-align: center;">Track history<br />
