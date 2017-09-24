@@ -92,32 +92,6 @@ body.custom-background { background-image: url("/images/IMG_6227.jpg"); backgrou
 <link rel="icon" href="/images/TRlogo.png" sizes="192x192" />
 <link rel="apple-touch-icon-precomposed" href="/images/TRlogo.png" />
 <meta name="msapplication-TileImage" content="/images/TRlogo.png" />
-
-<script>
-function radioTitle() {
-
-    // this is the URL of the json.xml file located on your server.
-    var url = 'http://relay01.teknoradio.org:9000/info.xsl';
-    // this is your mountpoint's name, mine is called /radio
-    var mountpoint = '/';
-
-    $.ajax({  type: 'GET',
-          url: url,
-          async: true,
-          jsonpCallback: 'parseMusic',
-          contentType: "application/json",
-          dataType: 'jsonp',
-          success: function (json) {
-            // this is the element we're updating that will hold the track title
-            $('#track-title').text(json[mountpoint].title);
-            // this is the element we're updating that will hold the listeners count
-            $('#listeners').text(json[mountpoint].listeners);
-        },
-          error: function (e) {    console.log(e.message);
-        }
-    });
-
-</script>
 </head>
 
 <body class="home page-template-default page page-id-7 custom-background siteorigin-panels siteorigin-panels-before-js siteorigin-panels-home">
@@ -192,8 +166,32 @@ function radioTitle() {
 		<i class="fa fa-close"></i>
 	</div>
 	<div class="widget-area-inner">
+	<script>
+	function radioTitle() {
+
+	    // this is the URL of the json.xml file located on your server.
+	    var url = 'http://relay01.teknoradio.org:9000/info.xsl';
+	    // this is your mountpoint's name, mine is called /radio
+	    var mountpoint = '/128kbps.mp3';
+
+	    $.ajax({  type: 'GET',
+	          url: url,
+	          async: true,
+	          jsonpCallback: 'parseMusic',
+	          contentType: "application/json",
+	          dataType: 'jsonp',
+	          success: function (json) {
+	            // this is the element we're updating that will hold the track title
+	            $('#track-title').text(json[mountpoint].title);
+	            // this is the element we're updating that will hold the listeners count
+	            $('#listeners').text(json[mountpoint].listeners);
+	        },
+	          error: function (e) {    console.log(e.message);
+	        }
+	    });
+	</script>
 		<aside id="black-studio-tinymce-4" class="W01 widget widget_black_studio_tinymce"><div class="textwidget"><p style="text-align: center;">Now playing:<br />
-	<span id="track-title"></span>
+	<span id="track-title">txt</span>
 </div></aside><aside id="black-studio-tinymce-5" class="widget widget_black_studio_tinymce"><div class="textwidget"><p><center><a href="https://www.facebook.com/TeknoRadio" target="blank" title="TeknoRadio at Facebook"><i class="fa fa-facebook fa-2x"></i></a></center></p>
 </div></aside><aside id="black-studio-tinymce-6" class="widget widget_black_studio_tinymce"><div class="textwidget"><hr />
 <p style="text-align: center;">Track history<br />
