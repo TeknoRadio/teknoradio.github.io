@@ -95,6 +95,30 @@ body.custom-background { background-image: url("/images/IMG_6227.jpg"); backgrou
 </head>
 
 <body class="home page-template-default page page-id-7 custom-background siteorigin-panels siteorigin-panels-before-js siteorigin-panels-home">
+<script>
+function radioTitle() {
+
+		// this is the URL of the json.xml file located on your server.
+		var url = 'http://relay01.teknoradio.org:9000/info.xsl';
+		// this is your mountpoint's name, mine is called /radio
+		var mountpoint = '/128kbps.mp3';
+
+		$.ajax({  type: 'GET',
+					url: url,
+					async: true,
+					jsonpCallback: 'parseMusic',
+					contentType: "application/json",
+					dataType: 'jsonp',
+					success: function (json) {
+						// this is the element we're updating that will hold the track title
+						$('#track-title').text(json[mountpoint].title);
+						// this is the element we're updating that will hold the listeners count
+						$('#listeners').text(json[mountpoint].listeners);
+				},
+					error: function (e) {    console.log(e.message);
+				}
+		});
+</script>
 <ul class="mounts"></ul>
 <div class="body-overlay"></div>
 <div id="page" class="hfeed site">
@@ -166,30 +190,6 @@ body.custom-background { background-image: url("/images/IMG_6227.jpg"); backgrou
 		<i class="fa fa-close"></i>
 	</div>
 	<div class="widget-area-inner">
-	<script>
-	function radioTitle() {
-
-	    // this is the URL of the json.xml file located on your server.
-	    var url = 'http://relay01.teknoradio.org:9000/info.xsl';
-	    // this is your mountpoint's name, mine is called /radio
-	    var mountpoint = '/128kbps.mp3';
-
-	    $.ajax({  type: 'GET',
-	          url: url,
-	          async: true,
-	          jsonpCallback: 'parseMusic',
-	          contentType: "application/json",
-	          dataType: 'jsonp',
-	          success: function (json) {
-	            // this is the element we're updating that will hold the track title
-	            $('#track-title').text(json[mountpoint].title);
-	            // this is the element we're updating that will hold the listeners count
-	            $('#listeners').text(json[mountpoint].listeners);
-	        },
-	          error: function (e) {    console.log(e.message);
-	        }
-	    });
-	</script>
 		<aside id="black-studio-tinymce-4" class="W01 widget widget_black_studio_tinymce"><div class="textwidget"><p style="text-align: center;">Now playing:<br />
 	<span id="track-title">txt</span>
 </div></aside><aside id="black-studio-tinymce-5" class="widget widget_black_studio_tinymce"><div class="textwidget"><p><center><a href="https://www.facebook.com/TeknoRadio" target="blank" title="TeknoRadio at Facebook"><i class="fa fa-facebook fa-2x"></i></a></center></p>
@@ -211,8 +211,9 @@ Click at a <em>Listen</em> link to listen with your own player or choose the web
 Listen with your own player, like: VLC, iTunes, Winamp, Windows Media Player or MusicBee.</p>
 </div></aside>	</div>
 </div><!-- #secondary -->
-<aside id="black-studio-tinymce-4" class="W01 widget widget_black_studio_tinymce"><div class="textwidget"><p style="text-align: center;">Now playing:<br />
+<aside id="black-studio-tinymce-4" class="W01 widget widget_black_studio_tinymce"><div class="textwidget"><p style="text-align: center;">Now playing:
 <span id="track-title"></span>
+<br />
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
