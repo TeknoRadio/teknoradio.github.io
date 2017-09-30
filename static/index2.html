@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@{{3.2.0}}/dist/amplitude.js"></script>
+<script type="text/javascript">
+    amplitude_config = {
+        'amplitude_live': true,
+        'amplitude_live_source': ‘http://http://player01.teknoradio.org:9000/128kbps.mp3;’,
+    }
+</script>
+</head>
+<body>
+  yo
+  <audio id="single-song" preload="none">
+      <source src="http://http://player01.teknoradio.org:9000/128kbps.mp3;” type="audio/mp3" id="single-song"/>
+      Your browser does not support the audio tag.
+  </audio>
+  <div id="amplitude-play-pause" class="amplitude-paused"></div>
+</body>
+</html>
